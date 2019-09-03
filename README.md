@@ -4,7 +4,7 @@ A Onesignal plugin that handles push notifications for both ios and android nati
 
 ## Prerequisites
 
-A Onesignal account with an active onesignal application. 
+A Onesignal account with an active onesignal application.
 
 ## Installation
 
@@ -12,9 +12,10 @@ A Onesignal account with an active onesignal application.
 tns plugin add nativescript-onesignal-sdk
 ```
 
-## Usage 
+## Usage
 
 ### Angular
+
 Not supported
 
 ### Typescript & Javascript
@@ -36,28 +37,28 @@ Then refer those values in your `AndroidManifest.xml`.
 
 Note: Add `xmlns:tools="http://schemas.android.com/tools"` on manifest root tag.
 
-```
+```xml
 <meta-data
 		tools:replace="android:value"
         android:name="onesignal_app_id"
         android:value="@string/onesignal_app_id"/>
-		
-		<meta-data
-				tools:replace="android:value"
-                android:name="onesignal_google_project_number"
-                android:value="@string/onesignal_google_project_number"/>
+
+<meta-data
+        tools:replace="android:value"
+        android:name="onesignal_google_project_number"
+        android:value="@string/onesignal_google_project_number"/>
 ```
 
 Add the following code on your `main.ts` or `app.js`:
 
 ```typescript
-import * as app from 'application';
-var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
+import * as app from "application";
+var TnsOneSignal = require("nativescript-onesignal").TnsOneSignal;
 
 if (app.android) {
-    app.on(app.launchEvent, (args) => {
-	     TnsOneSignal.startInit(app.android.context).init();
-    });
+  app.on(app.launchEvent, args => {
+    TnsOneSignal.startInit(app.android.context).init();
+  });
 }
 ```
 
@@ -70,7 +71,7 @@ import * as app from 'application';
 var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
 
 if (app.ios) {
-     TnsOneSignal.initWithLaunchOptionsAppIdHandleNotificationReceivedHandleNotificationActionSettings({}, 
+     TnsOneSignal.initWithLaunchOptionsAppIdHandleNotificationReceivedHandleNotificationActionSettings({},
             <your-onesignal-app-id>,
             (notificationReceived) => {
                 console.log(notification);
@@ -81,13 +82,14 @@ if (app.ios) {
 }
 ```
 
-
 ## API Reference
+
 [iOS API Reference](https://documentation.onesignal.com/docs/ios-sdk-api)
 
 [Android API Reference](https://documentation.onesignal.com/docs/android-sdk-api)
-    
+
 ## Demo
+
 ```bash
 npm run plugin.prepare
 # iOS

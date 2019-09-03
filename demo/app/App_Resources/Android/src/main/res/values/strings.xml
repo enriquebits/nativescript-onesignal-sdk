@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="onesignal_app_id"></string>
+    <string name="onesignal_google_project_number"></string>
+    <string name="title_activity_kimera">Demo</string>
+</resources>
